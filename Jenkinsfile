@@ -3,7 +3,7 @@ node {
 
     try {
         stage('Test') {
-            sh './gradlew check'
+            sh './gradlew test --stacktrace --debug'
         }
     } finally {
         archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
